@@ -12,7 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6fc15697c84394aa013ce830d015d1, type: 3}
   m_Name: LocalizationConfig
   m_EditorClassIdentifier: 
-  TextDatas: []
+  TextDatas:
+  - Key: ui_Settings
+    Datas:
+    - LanguageId: 0
+      Text: "\u7CFB\u7EDF\u8BBE\u7F6E"
+    - LanguageId: 1
+      Text: "\u7CFB\u7D71\u8A2D\u7F6E"
+    - LanguageId: 2
+      Text: Settings
+    - LanguageId: 3
+      Text: "\u8A2D\u5B9A"
   ImageDatas: []
   packageReferences:
   - language:

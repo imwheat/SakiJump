@@ -28,6 +28,8 @@ namespace GameBuild.Player
         public PlayerInputModel InputModel;
         [TabGroup("基础配置")]
         public PlayerModel Model;
+        [TabGroup("基础配置")]
+        public PlayData PlayData;
         /// <summary>
         /// 刚体
         /// </summary>
@@ -97,6 +99,7 @@ namespace GameBuild.Player
             InputModule = GetComponent<PlayerInputModule>();
             InputModel = InputModule.InputModel;
             Model ??= new PlayerModel();
+            PlayData ??= new PlayData();
             Rb = GetComponent<Rigidbody2D>();
             Anim = GetComponentInChildren<Animator>();
 
@@ -122,6 +125,10 @@ namespace GameBuild.Player
         /// </summary>
         private void HandleTimer()
         {
+            //游玩计时
+            PlayData.playTime += Time.deltaTime;
+            
+            //倒地摔倒CD
             if (Model.SplatFreezeTimer > 0f)
             {
                 Model.SplatFreezeTimer -= Time.deltaTime;
@@ -232,6 +239,7 @@ namespace GameBuild.Player
             {
                 //更新状态
                 Model.SplatFreezeTimer = Model.SplatFreezeTime;
+                PlayData.fallCount++;
                 
                 //播放音效
                 AudioDic.PlayAudio(splatAudioIndex, transform.position);
@@ -340,6 +348,7 @@ namespace GameBuild.Player
             //更新状态
             Model.OnJump = true;
             Model.OnGround = false;
+            PlayData.jumpCount++;
             
             //播放音效
             AudioDic.PlayAudio(jumpAudioIndex, transform.position);

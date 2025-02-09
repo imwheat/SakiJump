@@ -218,6 +218,10 @@ MonoBehaviour:
     OnJump: 0
     JumpUpSpeed: 0
     FallingTimer: 0
+  PlayData:
+    playTime: 0
+    jumpCount: 0
+    fallCount: 0
   Rb: {fileID: 54343829}
   Anim: {fileID: 0}
   jumpAudioIndex: 200002

@@ -11,6 +11,8 @@ using UnityEditor;
 
 #endif
 
+using GameBuild.Player;
+using TMPro;
 using UnityEngine;
 
 
@@ -41,6 +43,26 @@ namespace KFrame.UI
         /// </summary>
         [SerializeField] 
         private KButton exitBtn;
+        /// <summary>
+        /// 信息面板
+        /// </summary>
+        [SerializeField]
+        private GameObject infoPanel;
+        /// <summary>
+        /// 游玩时间
+        /// </summary>
+        [SerializeField]
+        private TMP_Text playTime;
+        /// <summary>
+        /// 跳跃次数
+        /// </summary>
+        [SerializeField]
+        private TMP_Text jumpCount;
+        /// <summary>
+        /// 倒地次数
+        /// </summary>
+        [SerializeField]
+        private TMP_Text fallCount; 
 
         #endregion
 
@@ -52,6 +74,51 @@ namespace KFrame.UI
             exitBtn.OnClick.AddListener(OnClickExitBtn);
         }
 
+        protected override void OnShow()
+        {
+            base.OnShow();
+            
+            UpdateInfoPanel();
+        }
+
+        protected override void ClosePanel()
+        {
+            base.ClosePanel();
+
+            Time.timeScale = 1f;
+        }
+
+        #region UI相关
+
+        /// <summary>
+        /// 更新信息面板
+        /// </summary>
+        private void UpdateInfoPanel()
+        {
+            //如果没有玩家那就隐藏信息面板
+            if (PlayerController.Instance == null)
+            {
+                infoPanel.SetActive(false);
+                return;
+            }
+            infoPanel.SetActive(true);
+            
+            //获取玩家信息
+            PlayData data = PlayerController.Instance.PlayData;
+
+            //计算游玩时间
+            int hour = (int)data.playTime / 3600;
+            int minutes = (int)(data.playTime - hour * 60) / 60;
+            int seconds = (int)data.playTime % 60;
+            
+            //更新游玩数据UI
+            playTime.text = hour + ":" + minutes.ToString("00") + ":" + seconds.ToString("00");
+            jumpCount.text = data.jumpCount.ToString();
+            fallCount.text = data.fallCount.ToString();
+        }
+
+        #endregion
+        
         #region 按键事件
         
         /// <summary>

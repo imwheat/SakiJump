@@ -157,6 +157,7 @@ namespace KFrame.UI
             //如果没有菜单那就打开暂停界面
             if (curUIPanel == null)
             {
+                Time.timeScale = 0f;
                 UISystem.Show<PausePanel>();
             }
             else

@@ -15,11 +15,6 @@ namespace KFrame.UI
         #region UI配置
 
         /// <summary>
-        /// 游戏设置按钮
-        /// </summary>
-        [SerializeField] 
-        private KButton gameSettingsBtn;
-        /// <summary>
         /// 音效设置按钮
         /// </summary>
         [SerializeField] 
@@ -29,11 +24,6 @@ namespace KFrame.UI
         /// </summary>
         [SerializeField] 
         private KButton graphicSettingsBtn;
-        /// <summary>
-        /// 按键设置按钮
-        /// </summary>
-        [SerializeField] 
-        private KButton inputSettingsBtn;
         /// <summary>
         /// 返回按钮
         /// </summary>
@@ -47,22 +37,13 @@ namespace KFrame.UI
             base.Awake();
             
             //按键事件注册
-            gameSettingsBtn.OnClick.AddListener(OnClickGameSettingsBtn);
             audioSettingsBtn.OnClick.AddListener(OnClickAudioSettingsBtn);
             graphicSettingsBtn.OnClick.AddListener(OnClickGraphicSettingsBtn);
-            inputSettingsBtn.OnClick.AddListener(OnClickInputSettingsBtn);
             returnBtn.OnClick.AddListener(OnPressESC);
         }
 
         #region UI事件
 
-        /// <summary>
-        /// 点击游戏设置按钮
-        /// </summary>
-        private void OnClickGameSettingsBtn()
-        {
-            SwitchToThisPanel<GameSettingsPanel>(true);
-        }
         /// <summary>
         /// 点击游戏设置按钮
         /// </summary>
@@ -76,13 +57,6 @@ namespace KFrame.UI
         private void OnClickGraphicSettingsBtn()
         {
             SwitchToThisPanel<GraphicSettingsPanel>(true);
-        }
-        /// <summary>
-        /// 点击游戏设置按钮
-        /// </summary>
-        private void OnClickInputSettingsBtn()
-        {
-            SwitchToThisPanel<InputSettingsPanel>(true);
         }
 
         #endregion
