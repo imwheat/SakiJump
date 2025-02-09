@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 6643ca6e5c9cb8345b79be8d5f2e6748
+  m_SerializeEntries:
+  - m_GUID: f9182528a80aa5546b028d2a5409ba0b
+    m_Address: FrameSettings
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3768499e882a87040a54c5818c496622
+    m_Address: AudioLibrary
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c53d89ba7581be47afbebe72c397373
+    m_Address: LocalizationConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 656e5c02725184046babdb732f20823f
+    m_Address: UIGlobalConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c9d4e097d6e8d6c4f9eef9923ae1d236
+    m_Address: SimplifiedChinese
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c9b94ff7233e24c4a92866b06899b9b6
+    m_Address: AudioPlay2D
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7737ddca6e00ac479858c3510042262
+    m_Address: AudioPlay3D
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3b823100be1ae8141b98db92b85b9121
+    m_Address: GraphicSettingsPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e81d0e478c301c54985dc101ddeca06c
+    m_Address: InputSettingsPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3364427dd828c1245ac8379d92320f3d
+    m_Address: AudioSettingsPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b4f6fb1c85aa5ab419ecbcf6f00e02b8
+    m_Address: SettingsPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7ef36879011e76d4aa236a28c00aeef7
+    m_Address: GameSettingsPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0323ad0cc8fddad44a1f6b0408ffe2e9
+    m_Address: PausePanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 20f7e493885d6b343ae35460187bb66e
+    m_Address: DialogueUIPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 44d27bd9ae71b1a4d834391b59694988
+    m_Address: ConfirmPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: fab041c422071b748b8d7f9055db7aaa, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 659752ece0995b945bf19d1e9449452c, type: 2}
+    - {fileID: 11400000, guid: 7eefdee172ce28f43988978c68220ed1, type: 2}

@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fd6faea11d382d47b724ce6a6192d46, type: 3}
+  m_Name: AudioLibrary
+  m_EditorClassIdentifier: 
+  <Audioes>k__BackingField:
+  - AudioIndex: 200001
+    AudioName: bump
+    Clips: 00000000
+    AudioGroupIndex: 1
+    Volume: 1
+    Pitch: 1
+    RandomMinPitch: 1
+    RandomMaxPitch: 1
+    MaxPitch: 1
+    LimitPlay: 1
+    LimitPlayCount: 2
+    Loop: 0
+    Is3D: 1
+    AudioesType: 0
+  - AudioIndex: 200002
+    AudioName: jump
+    Clips: 01000000
+    AudioGroupIndex: 1
+    Volume: 1
+    Pitch: 1
+    RandomMinPitch: 1
+    RandomMaxPitch: 1
+    MaxPitch: 1
+    LimitPlay: 1
+    LimitPlayCount: 2
+    Loop: 0
+    Is3D: 1
+    AudioesType: 0
+  - AudioIndex: 200003
+    AudioName: land
+    Clips: 02000000
+    AudioGroupIndex: 1
+    Volume: 1
+    Pitch: 1
+    RandomMinPitch: 1
+    RandomMaxPitch: 1
+    MaxPitch: 1
+    LimitPlay: 1
+    LimitPlayCount: 2
+    Loop: 0
+    Is3D: 1
+    AudioesType: 0
+  - AudioIndex: 200004
+    AudioName: splat
+    Clips: 03000000
+    AudioGroupIndex: 1
+    Volume: 1
+    Pitch: 1
+    RandomMinPitch: 1
+    RandomMaxPitch: 1
+    MaxPitch: 1
+    LimitPlay: 1
+    LimitPlayCount: 2
+    Loop: 0
+    Is3D: 1
+    AudioesType: 0
+  <BGMs>k__BackingField: []
+  <AudioGroups>k__BackingField:
+  - GroupName: Master
+    GroupIndex: 0
+    ChildrenIndexes: 010000000200000003000000
+  - GroupName: SFX
+    GroupIndex: 1
+    ChildrenIndexes: 
+  - GroupName: BGM
+    GroupIndex: 2
+    ChildrenIndexes: 
+  - GroupName: UI
+    GroupIndex: 3
+    ChildrenIndexes: 
+  <AudioClips>k__BackingField:
+  - {fileID: 8300000, guid: 54c4841cc96280f43b9720de7cc77a94, type: 3}
+  - {fileID: 8300000, guid: 2487843e729560b40ab1d80ce9b22111, type: 3}
+  - {fileID: 8300000, guid: e58babdfe8595004490e7ce4ebd37327, type: 3}
+  - {fileID: 8300000, guid: cf45da9eb2e39da4cba599b76eb28cf7, type: 3}
+  <BGMClips>k__BackingField: []
+  <AudioMixer>k__BackingField: {fileID: 24100000, guid: 96598e9a8444ddb429c766161c0af201, type: 2}
+  <AudioMixerGroups>k__BackingField:
+  - {fileID: 24300002, guid: 96598e9a8444ddb429c766161c0af201, type: 2}
+  - {fileID: -2697891055904758130, guid: 96598e9a8444ddb429c766161c0af201, type: 2}
+  - {fileID: 8024287094261967831, guid: 96598e9a8444ddb429c766161c0af201, type: 2}
+  - {fileID: -2606921185042502454, guid: 96598e9a8444ddb429c766161c0af201, type: 2}
