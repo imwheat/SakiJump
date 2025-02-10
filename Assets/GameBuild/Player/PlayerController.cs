@@ -124,7 +124,16 @@ namespace GameBuild.Player
         {
             PhysicsCheck();
         }
-        
+
+        private void OnDestroy()
+        {
+            //在删除的时候保存记录玩家位置
+            if (PlayData != null)
+            {
+                PlayData.playerPos = transform.position;
+            }
+        }
+
         /// <summary>
         /// 处理计时器相关
         /// </summary>

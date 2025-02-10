@@ -17,6 +17,7 @@ using UnityEditor;
 
 namespace GameBuild
 {
+    [DefaultExecutionOrder(-1)]
     public class GameManager
     {
         #region 属性
@@ -41,6 +42,7 @@ namespace GameBuild
         {
             //加载存档
             GameSaveManager.LoadGame();
+            Application.quitting += SavePlayerData;
         }
         /// <summary>
         /// 开始游戏
@@ -67,8 +69,11 @@ namespace GameBuild
             {
                 //保存玩家位置
                 GameSaveManager.CurPlayData.playerPos = PlayerController.Instance.transform.position;
-                GameSaveManager.SaveGame();
             }
+            
+            //保存数据
+            GameSaveManager.SaveGame();
+
         }
         /// <summary>
         /// 返回主菜单
@@ -92,8 +97,6 @@ namespace GameBuild
         /// </summary>
         public static void QuitGame()
         {
-            //保存玩家信息
-            SavePlayerData();
             
 #if UNITY_EDITOR
             if (EditorApplication.isPlaying)
