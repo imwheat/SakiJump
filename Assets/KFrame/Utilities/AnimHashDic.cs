@@ -13,34 +13,14 @@ namespace KFrame.Utilities
     {
         #region 代码生成开始标识
 
-        /// <summary>
-        /// 名称: e
-        /// 引用动画机
-        /// Trigger: sad
-        /// Float: sad
-        /// </summary>
-        public static readonly int eHash = Animator.StringToHash("e");
-        /// <summary>
-        /// 名称: asd
-        /// 引用动画机
-        /// Float: asmdkas
-        /// </summary>
-        public static readonly int asdHash = Animator.StringToHash("asd");
-        /// <summary>
-        /// 名称: ddd
-        /// 引用动画机
-        /// Bool: asdasdasd
-        /// Int: sad 1ddd
-        /// </summary>
-        public static readonly int dddHash = Animator.StringToHash("ddd");
-        /// <summary>
-        /// 名称: w
-        /// 引用动画机
-        /// Int: sad
-        /// </summary>
-        public static readonly int wHash = Animator.StringToHash("w");
+		/// <summary>
+		/// 名称: close
+		/// 引用动画机
+		/// Trigger: ConfirmPanel,GraphicSettingsPanel,AudioSettingsPanel,GameSettingsPanel,InputSettingsPanel,PauseMenuPanel,SettingsPanel
+		/// </summary>
+		public static readonly int closeHash = Animator.StringToHash("close");
 
-        #endregion 代码生成结束标识
+		#endregion 代码生成结束标识
     }
 }
 

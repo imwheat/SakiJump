@@ -71,6 +71,7 @@ namespace KFrame.UI
         {
             base.Awake();
             
+            returnBtn.OnClick.AddListener(OnClickReturnBtn);
             settingsBtn.OnClick.AddListener(OnClickSettingsBtn);
             menuBtn.OnClick.AddListener(OnClickMainMenuBtn);
             exitBtn.OnClick.AddListener(OnClickExitBtn);
@@ -85,9 +86,13 @@ namespace KFrame.UI
 
         protected override void ClosePanel()
         {
+            if (string.IsNullOrEmpty(switchPanelKey))
+            {
+                Time.timeScale = 1f;
+            }
+            
             base.ClosePanel();
 
-            Time.timeScale = 1f;
         }
 
         #region UI相关
@@ -122,7 +127,12 @@ namespace KFrame.UI
         #endregion
         
         #region 按键事件
-        
+
+        private void OnClickReturnBtn()
+        {
+            Time.timeScale = 1f;
+            Close();
+        }
         /// <summary>
         /// 按下设置按钮
         /// </summary>

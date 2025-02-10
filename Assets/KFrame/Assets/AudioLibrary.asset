@@ -69,6 +69,76 @@ MonoBehaviour:
     Loop: 0
     Is3D: 1
     AudioesType: 0
+  - AudioIndex: 200005
+    AudioName: CRY
+    Clips: 04000000
+    AudioGroupIndex: 2
+    Volume: 0.1
+    Pitch: 1
+    RandomMinPitch: 1
+    RandomMaxPitch: 1
+    MaxPitch: 1
+    LimitPlay: 1
+    LimitPlayCount: 2
+    Loop: 0
+    Is3D: 0
+    AudioesType: 0
+  - AudioIndex: 200006
+    AudioName: HTRWT
+    Clips: 05000000
+    AudioGroupIndex: 2
+    Volume: 0.1
+    Pitch: 1
+    RandomMinPitch: 1
+    RandomMaxPitch: 1
+    MaxPitch: 1
+    LimitPlay: 1
+    LimitPlayCount: 2
+    Loop: 0
+    Is3D: 0
+    AudioesType: 0
+  - AudioIndex: 200007
+    AudioName: KillKISS
+    Clips: 06000000
+    AudioGroupIndex: 2
+    Volume: 0.1
+    Pitch: 1
+    RandomMinPitch: 1
+    RandomMaxPitch: 1
+    MaxPitch: 1
+    LimitPlay: 1
+    LimitPlayCount: 2
+    Loop: 0
+    Is3D: 0
+    AudioesType: 0
+  - AudioIndex: 200008
+    AudioName: Mujica
+    Clips: 07000000
+    AudioGroupIndex: 2
+    Volume: 0.1
+    Pitch: 1
+    RandomMinPitch: 1
+    RandomMaxPitch: 1
+    MaxPitch: 1
+    LimitPlay: 1
+    LimitPlayCount: 2
+    Loop: 0
+    Is3D: 0
+    AudioesType: 0
+  - AudioIndex: 200009
+    AudioName: MXJ
+    Clips: 08000000
+    AudioGroupIndex: 2
+    Volume: 0.1
+    Pitch: 1
+    RandomMinPitch: 1
+    RandomMaxPitch: 1
+    MaxPitch: 1
+    LimitPlay: 1
+    LimitPlayCount: 2
+    Loop: 0
+    Is3D: 0
+    AudioesType: 0
   <BGMs>k__BackingField: []
   <AudioGroups>k__BackingField:
   - GroupName: Master
@@ -88,6 +158,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2487843e729560b40ab1d80ce9b22111, type: 3}
   - {fileID: 8300000, guid: e58babdfe8595004490e7ce4ebd37327, type: 3}
   - {fileID: 8300000, guid: cf45da9eb2e39da4cba599b76eb28cf7, type: 3}
+  - {fileID: 8300000, guid: da4d8927b2ef5734ba94b2fed1040f84, type: 3}
+  - {fileID: 8300000, guid: 9dc2081d3e19c7f45923dd834bb76bef, type: 3}
+  - {fileID: 8300000, guid: 9a6d80d8ff7b6f943b6fe6f133cdc20b, type: 3}
+  - {fileID: 8300000, guid: c2d3889a576bc6f44a1271c4e005353e, type: 3}
+  - {fileID: 8300000, guid: 88fecb9215018c64eb15a94f3e5ab624, type: 3}
   <BGMClips>k__BackingField: []
   <AudioMixer>k__BackingField: {fileID: 24100000, guid: 96598e9a8444ddb429c766161c0af201, type: 2}
   <AudioMixerGroups>k__BackingField:
