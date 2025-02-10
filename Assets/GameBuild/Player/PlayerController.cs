@@ -8,6 +8,7 @@
 using System;
 using KFrame.Attributes;
 using KFrame.Systems;
+using KFrame.UI;
 using KFrame.Utilities;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -110,6 +111,20 @@ namespace GameBuild.Player
 
             groundCheckSize = groundCheck.GetComponent<BoxCollider2D>().size;
             wallCheckSize = leftWallCheck.GetComponent<BoxCollider2D>().size;
+        }
+
+        private void OnEnable()
+        {
+#if UNITY_ANDROID
+            UISystem.Show<GameControlPanel>();
+#endif
+        }
+
+        private void OnDisable()
+        {
+#if UNITY_ANDROID
+            UISystem.Close<GameControlPanel>();
+#endif
         }
 
         private void Update()
