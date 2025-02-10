@@ -208,6 +208,7 @@ namespace KFrame.UI
             UIBase ui = uiObj.GetComponent<UIBase>();
             uiObj.transform.SetAsLastSibling();
             ui.Init(data);
+            ui.ResetRect();
             
             //然后把window放入Active的列表里面
             if (!activeUIsDic.TryGetValue(uiKey, out List<UIBase> uiList))

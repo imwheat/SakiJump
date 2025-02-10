@@ -125,6 +125,11 @@ namespace KFrame.UI
 
             UISystem.Show(this);
         }
+
+        public virtual void ResetRect()
+        {
+            
+        }
         /// <summary>
         /// 关闭窗口
         /// </summary>

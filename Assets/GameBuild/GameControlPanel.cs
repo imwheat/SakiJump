@@ -7,6 +7,7 @@
 
 using GameBuild.Player;
 using KFrame.UI;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace GameBuild
@@ -51,6 +52,14 @@ namespace GameBuild
             leftButton.OnRelease.AddListener(OnReleaseMove);
             rightButton.OnRelease.AddListener(OnReleaseMove);
             jumpButton.OnRelease.AddListener(OnReleaseJump);
+        }
+        public override void ResetRect()
+        {
+            base.ResetRect();
+            
+            RectTransform rectTransform = transform as RectTransform;
+            rectTransform.offsetMin = Vector2.zero;
+            rectTransform.offsetMax = Vector2.zero;
         }
 
         #region 按钮事件
