@@ -172,9 +172,18 @@ namespace GameBuild.Player
             }
 
             //掉落检测
-            if (!Model.OnGround && Rb.velocity.y < -0.1f)
+            if (!Model.OnGround)
             {
-                Model.FallingTimer += Time.deltaTime;
+                if (Rb.velocity.y - Model.RefVelocity.y < -0.1f)
+                {
+                    Model.FallingTimer += Time.deltaTime;
+                }
+                //以防一些特殊情况落地在边缘
+                else if (Mathf.Abs(Rb.velocity.y - Model.RefVelocity.y) < 0.1f && Model.FallingTimer > 0.1f)
+                {
+                    Model.OnGround = true;
+                    OnLand();
+                }
             }
             
             //如果在跳跃中，检测是否撞到墙壁
@@ -208,7 +217,6 @@ namespace GameBuild.Player
 
             }
 
-
         }
 
         /// <summary>
@@ -217,7 +225,7 @@ namespace GameBuild.Player
         public void OnHitWall()
         {
             //如果速度大于0.1f的话那就更新速度
-            if (Mathf.Abs(Rb.velocity.x) > 0.1f)
+            if (Mathf.Abs(Rb.velocity.x - Model.RefVelocity.x) > 0.1f)
             {
                 Model.JumpUpSpeed = Rb.velocity.x;
             }
@@ -244,7 +252,8 @@ namespace GameBuild.Player
                 //播放音效
                 AudioDic.PlayAudio(splatAudioIndex, transform.position);
             }
-            else
+            //如果掉落时间非常小，那就不播放音效
+            else if (Model.FallingTimer > 0.1f)
             {
                 //播放音效
                 AudioDic.PlayAudio(landAudioIndex, transform.position);
@@ -277,11 +286,29 @@ namespace GameBuild.Player
             //砸地不能移动的冷却中
             if(Model.SplatFreezeTimer > 0f) return;
             
+            
             //如果不在地面上或者按住跳跃键那就返回
-            if(Model.OnGround == false || InputModel.JumpInput) return;
+            if (!Model.OnGround || InputModel.JumpInput)
+            {
+                //排除特殊情况处理
+                if (Model.OnGround || Model.OnJump || !Mathf.Approximately(Rb.velocity.y, 0f))
+                {
+                    return;
+                }
+            }
 
             //更新速度
-            Rb.velocity = InputModel.MoveInput * Model.MoveSpeed;
+            Model.SelfVelocity = InputModel.MoveInput * Model.MoveSpeed;
+            Rb.velocity = Model.RefVelocity + Model.SelfVelocity;
+        }
+        /// <summary>
+        /// 更新参考系速度
+        /// </summary>
+        /// <param name="velocity"></param>
+        public void UpdateRefVelocity(Vector2 velocity)
+        {
+            Model.RefVelocity = velocity;
+            Rb.velocity = Model.SelfVelocity + Model.RefVelocity;
         }
         /// <summary>
         /// 处理跳跃输入

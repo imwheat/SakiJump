@@ -6,6 +6,8 @@
 //*******************************************************
 
 using Sirenix.OdinInspector;
+using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace GameBuild.Player
 {
@@ -59,6 +61,16 @@ namespace GameBuild.Player
         /// </summary>
         [LabelText("砸地不能移动的计时器"), TabGroup("移动")]
         public float SplatFreezeTimer;
+        /// <summary>
+        /// 参考系速度
+        /// </summary>
+        [LabelText("参考系速度"), TabGroup("移动")]
+        public Vector2 RefVelocity = Vector2.zero;
+        /// <summary>
+        /// 自身当前速度
+        /// </summary>
+        [LabelText("自身当前速度"), TabGroup("移动")]
+        public Vector2 SelfVelocity = Vector2.zero;
         
         #endregion
 

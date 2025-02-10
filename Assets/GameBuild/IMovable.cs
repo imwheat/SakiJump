@@ -21,8 +21,8 @@ namespace GameBuild
         [SerializeField, LabelText("Transform"), TabGroup("设置")]  Transform transform { get;}
         [SerializeField, LabelText("停止时间"), TabGroup("设置")]  float StopTime { get; set; }
         [SerializeField, LabelText("移动速度"), TabGroup("设置")]  float Speed { get; set; }
-        [SerializeField, LabelText("游荡设置位点"), TabGroup("设置")]  List<PartolSet> PartolSets { get; set; }
-        [SerializeField, LabelText("游荡位点"), ReadOnly, TabGroup("逻辑")]  List<Vector2> partolPoses { get; set; }
+        [SerializeField, LabelText("游荡设置位点"), TabGroup("设置")]  List<PatrolSet> PartolSets { get; set; }
+        [SerializeField, LabelText("游荡位点"), ReadOnly, TabGroup("逻辑")]  List<GridCoordinate> partolPoses { get; set; }
         [SerializeField, LabelText("当前移动目标"), ReadOnly, TabGroup("逻辑")]  int curTarget { get; set; }
         [SerializeField, LabelText("当前位置"), ReadOnly, TabGroup("逻辑")]  int curIndex { get; set; }
         [SerializeField, LabelText("当前移动方向"), ReadOnly, TabGroup("逻辑")]  int dir { get; set; }
@@ -51,17 +51,18 @@ namespace GameBuild
             curIndex = 0;
             curTarget = 1;
             dir = 1;
+            velocity = Vector2.zero;
             Vector2 tmpPos = transform.position;
             offset = new Vector2(transform.position.x-tmpPos.x, transform.position.y-tmpPos.y);
             stop = true;
             arrive = true;
-            partolPoses = new List<Vector2>();
+            partolPoses = new List<GridCoordinate>();
 
             if(PartolSets != null)
             {
                 foreach (var p in PartolSets)
                 {
-                    partolPoses.Add((Vector2)(p.transform.position - PartolSets[0].transform.position + transform.position));
+                    partolPoses.Add((GridCoordinate)(p.transform.position - PartolSets[0].transform.position + transform.position));
                 }
             }
 
@@ -182,6 +183,7 @@ namespace GameBuild
                     //然后停靠
                     stopTimer = StopTime;
                     stop = true;
+                    velocity = Vector2.zero;
 
                     //停止运动
                     OnMoveStop();

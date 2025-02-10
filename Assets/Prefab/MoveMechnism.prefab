@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d708eb6a0872ad5449b7fa1a3a4e6516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AutoMove: 0
+  AutoMove: 1
   MoveSpeed: 3
   _partolSets: []
   _partolPos: []

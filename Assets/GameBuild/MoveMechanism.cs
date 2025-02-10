@@ -23,11 +23,13 @@ namespace GameBuild
         public bool AutoMove = true;
         [LabelText("移动速度")]
         public float MoveSpeed = 3f;
+        [LabelText("当前速度")]
+        public Vector2 CurVelocity = Vector2.zero;
 
         [SerializeField]
-        private List<PartolSet> _partolSets = new();
+        private List<PatrolSet> _partolSets = new();
         [SerializeField]
-        private List<Vector2> _partolPos = new();
+        private List<GridCoordinate> _partolPos = new();
         #endregion
 
         #region 逻辑检测
@@ -45,11 +47,11 @@ namespace GameBuild
         public bool mechanismMove { get; set; }
         public bool circleMove { get; set; }
         public Vector2 offset { get; set; }
-        public Vector2 velocity { get; set; }
+        public Vector2 velocity { get=>CurVelocity; set=>CurVelocity = value; }
         public float StopTime { get; set; }
         public float Speed { get => MoveSpeed; set => MoveSpeed = value; }
-        public List<PartolSet> PartolSets { get => _partolSets; set => _partolSets = value; }
-        public List<Vector2> partolPoses { get=> _partolPos; set => _partolPos = value; }
+        public List<PatrolSet> PartolSets { get => _partolSets; set => _partolSets = value; }
+        public List<GridCoordinate> partolPoses { get=> _partolPos; set => _partolPos = value; }
         public int curTarget { get; set; }
         public int curIndex { get; set; }
         public int dir { get; set; }
@@ -85,9 +87,11 @@ namespace GameBuild
                 if (player != null)
                 {
                     this.player = player;
+                    MoveSpeedSync();
                 }
             }
         }
+
         private void OnTriggerExit2D(Collider2D other)
         {
             if (other.CompareTag(Tags.Player))
@@ -95,8 +99,9 @@ namespace GameBuild
                 PlayerController player = other.GetComponentInParent<PlayerController>();
 
                 //如果获取到了玩家
-                if (player != null)
+                if (player != null && this.player != null)
                 {
+                    this.player.Model.RefVelocity = Vector2.zero;
                     this.player = null;
                 }
             }
@@ -112,6 +117,7 @@ namespace GameBuild
 
         void IMovable.OnMoveStop()
         {
+            velocity = Vector2.zero;
             MoveSpeedSync();
         }
 
@@ -130,10 +136,18 @@ namespace GameBuild
         /// </summary>
         private void MoveSpeedSync()
         {
-            //如果玩家不为空，并且在地面上面，那么同步速度
-            if (player != null && player.Model.OnGround)
+            //如果玩家不为空，并且不在跳跃，那么同步速度
+            if (player != null)
             {
-                player.Rb.velocity = velocity;
+                if (!player.Model.OnJump)
+                {
+                    player.UpdateRefVelocity(velocity);
+                }
+                else
+                {
+                    player.Model.RefVelocity = Vector2.zero;
+                    player = null;
+                }
             }
         }
 
