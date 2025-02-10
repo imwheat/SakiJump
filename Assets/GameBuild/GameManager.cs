@@ -8,6 +8,7 @@
 
 using GameBuild.Player;
 using KFrame.Systems;
+using KFrame.UI;
 using KFrame.Utilities;
 using UnityEngine;
 #if UNITY_EDITOR
@@ -60,12 +61,20 @@ namespace GameBuild
             StartGame();
         }
         /// <summary>
+        /// 游戏通关
+        /// </summary>
+        public static void GameClear()
+        {
+            Time.timeScale = 0f;
+            UISystem.Show<GameEndPanel>();
+        }
+        /// <summary>
         /// 保存玩家信息
         /// </summary>
         private static void SavePlayerData()
         {
             //如果玩家不为空那就存档
-            if (PlayerController.Instance != null)
+            if (PlayerController.Instance != null && GameSaveManager.CurPlayData != null)
             {
                 //保存玩家位置
                 GameSaveManager.CurPlayData.playerPos = PlayerController.Instance.transform.position;

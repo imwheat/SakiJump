@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: ui_Settings
-  Parent: {fileID: 0}
+  Parent: {fileID: 7741075616138602971}
   target: {fileID: 5040265840143473904}
   StringData:
     Key: ui_Settings
@@ -591,7 +591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: ui_QuitGame
-  Parent: {fileID: 0}
+  Parent: {fileID: 7741075616138602971}
   target: {fileID: 6813263604262281657}
   StringData:
     Key: 
@@ -806,7 +806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: ui_ContinueGame
-  Parent: {fileID: 0}
+  Parent: {fileID: 7741075616138602971}
   target: {fileID: 3585861752836977813}
   StringData:
     Key: 
@@ -1173,7 +1173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: ui_QuitToMenu
-  Parent: {fileID: 0}
+  Parent: {fileID: 7741075616138602971}
   target: {fileID: 4955531589947172447}
   StringData:
     Key: 

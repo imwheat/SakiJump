@@ -139,8 +139,14 @@ namespace GameBuild.Player
         /// </summary>
         private void HandleTimer()
         {
+            //如果游戏暂停了就返回
+            if(Time.timeScale == 0f) return;
+            
             //游玩计时
-            PlayData.playTime += Time.deltaTime;
+            if (PlayData != null)
+            {
+                PlayData.playTime += Time.deltaTime;
+            }
             
             //倒地摔倒CD
             if (Model.SplatFreezeTimer > 0f)

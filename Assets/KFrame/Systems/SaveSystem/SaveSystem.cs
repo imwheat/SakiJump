@@ -452,7 +452,18 @@ namespace KFrame.Systems
         {
             SaveGlobalSave(saveObject, saveObject.GetType().GetNiceName());
         }
-
+        /// <summary>
+        /// 删除设置文件
+        /// </summary>
+        /// <param name="fileName"></param>
+        public static void DeleteGlobalSave(string fileName)
+        {
+            string path = globalSaveDirPath + "/" + fileName;
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+        }
         /// <summary>
         /// 删除设置文件
         /// </summary>
