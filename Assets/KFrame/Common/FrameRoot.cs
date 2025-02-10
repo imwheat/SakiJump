@@ -1,3 +1,4 @@
+using GameBuild;
 using KFrame.UI;
 using UnityEngine;
 
@@ -84,7 +85,7 @@ namespace KFrame
 
         private void InitManagers()
         {
-
+            GameManager.Init();
         }
 
         #endregion

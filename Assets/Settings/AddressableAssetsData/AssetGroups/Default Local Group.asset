@@ -82,13 +82,28 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 20f7e493885d6b343ae35460187bb66e
-    m_Address: DialogueUIPanel
+  - m_GUID: 44d27bd9ae71b1a4d834391b59694988
+    m_Address: ConfirmPanel
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 44d27bd9ae71b1a4d834391b59694988
-    m_Address: ConfirmPanel
+  - m_GUID: 83befc476b09e4440b235b6856fc10b4
+    m_Address: Player
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c9cfa26abfee488c85f1582747f6a02
+    m_Address: GamePlay
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 32adc3a359b3a17469317450679da03b
+    m_Address: MainMenu
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: da14b254bd997ec4994babb3b9cc0b6f
+    m_Address: MainMenuPanel
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

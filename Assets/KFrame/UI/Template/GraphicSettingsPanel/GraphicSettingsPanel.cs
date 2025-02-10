@@ -95,7 +95,12 @@ namespace KFrame.UI
         /// 帧率限制选项
         /// </summary>
         private List<int> frameRateCapConfig;
-        
+
+        public GraphicSettingsPanel(KSwitchButton vSyncBtn)
+        {
+            this.vSyncBtn = vSyncBtn;
+        }
+
         #endregion
 
         #region 生命周期
@@ -121,7 +126,6 @@ namespace KFrame.UI
         }
 
         #endregion
-
 
         #region 初始化
         

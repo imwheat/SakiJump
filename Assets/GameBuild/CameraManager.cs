@@ -18,20 +18,18 @@ namespace GameBuild
 
         #region 属性配置
 
-        private Transform followTarget;
+        public Transform followTarget;
         [SerializeField]
         private float yOffset = 5f;
         [SerializeField]
         private float ySize = 10f;
         #endregion
 
-
         #region 生命周期
 
         private void Awake()
         {
             instance = this;
-            followTarget = PlayerController.Instance.transform;
         }
 
         private void LateUpdate()

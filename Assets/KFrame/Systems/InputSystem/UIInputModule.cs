@@ -183,10 +183,7 @@ namespace KFrame.Systems
         /// <param name="context">输入事件</param>
         private void OnSubmit(InputAction.CallbackContext context)
         {
-            if (DialogueSystem.DialogueSystem.InDialogue && context.ReadValueAsButton())
-            {
-                DialogueSystem.DialogueSystem.DialoguePanel?.Next();
-            }
+
         }
         /// <summary>
         /// Esc

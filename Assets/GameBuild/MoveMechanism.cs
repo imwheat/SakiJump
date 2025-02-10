@@ -21,6 +21,8 @@ namespace GameBuild
 
         [LabelText("自动移动")]
         public bool AutoMove = true;
+        [LabelText("环形移动")]
+        public bool CircleMove = false;
         [LabelText("移动速度")]
         public float MoveSpeed = 3f;
         [LabelText("当前速度")]
@@ -37,6 +39,7 @@ namespace GameBuild
         /// <summary>
         /// 玩家
         /// </summary>
+        [SerializeField]
         private PlayerController player;
 
         #endregion
@@ -45,7 +48,7 @@ namespace GameBuild
 
         public bool autoMove { get => AutoMove; set => AutoMove = value; }
         public bool mechanismMove { get; set; }
-        public bool circleMove { get; set; }
+        public bool circleMove { get => CircleMove; set => CircleMove = value; }
         public Vector2 offset { get; set; }
         public Vector2 velocity { get=>CurVelocity; set=>CurVelocity = value; }
         public float StopTime { get; set; }
@@ -142,11 +145,6 @@ namespace GameBuild
                 if (!player.Model.OnJump)
                 {
                     player.UpdateRefVelocity(velocity);
-                }
-                else
-                {
-                    player.Model.RefVelocity = Vector2.zero;
-                    player = null;
                 }
             }
         }

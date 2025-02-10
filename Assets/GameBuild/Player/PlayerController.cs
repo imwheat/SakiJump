@@ -28,8 +28,13 @@ namespace GameBuild.Player
         public PlayerInputModel InputModel;
         [TabGroup("基础配置")]
         public PlayerModel Model;
+
         [TabGroup("基础配置")]
-        public PlayData PlayData;
+        public PlayData PlayData
+        {
+            get => GameSaveManager.CurPlayData;
+            set => GameSaveManager.CurPlayData = value;
+        }
         /// <summary>
         /// 刚体
         /// </summary>

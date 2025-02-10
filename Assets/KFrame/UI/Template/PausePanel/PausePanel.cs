@@ -11,6 +11,7 @@ using UnityEditor;
 
 #endif
 
+using GameBuild;
 using GameBuild.Player;
 using TMPro;
 using UnityEngine;
@@ -71,6 +72,7 @@ namespace KFrame.UI
             base.Awake();
             
             settingsBtn.OnClick.AddListener(OnClickSettingsBtn);
+            menuBtn.OnClick.AddListener(OnClickMainMenuBtn);
             exitBtn.OnClick.AddListener(OnClickExitBtn);
         }
 
@@ -129,20 +131,19 @@ namespace KFrame.UI
             SwitchToThisPanel<SettingsPanel>(true);
         }
         /// <summary>
+        /// 关闭窗口然后返回主菜单
+        /// </summary>
+        private void OnClickMainMenuBtn()
+        {
+            Close();
+            GameManager.ReturnMainMenu();
+        }
+        /// <summary>
         /// 按下退出按钮
         /// </summary>
         private void OnClickExitBtn()
         {
-#if UNITY_EDITOR
-            if (EditorApplication.isPlaying)
-            {
-                EditorApplication.isPlaying = false;
-                EditorApplication.ExitPlaymode();
-            }
-#else
-            Application.Quit();
-#endif
-
+            GameManager.QuitGame();
         }
 
         #endregion

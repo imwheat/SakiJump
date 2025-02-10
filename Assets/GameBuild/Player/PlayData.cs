@@ -5,6 +5,8 @@
 //* 描述：玩家游玩数据
 //*******************************************************
 
+using UnityEngine;
+
 namespace GameBuild.Player
 {
     [System.Serializable]
@@ -22,6 +24,10 @@ namespace GameBuild.Player
         /// 倒地次数
         /// </summary>
         public int fallCount;
+        /// <summary>
+        /// 玩家位置
+        /// </summary>
+        public Vector2 playerPos;
     }
 }
 
