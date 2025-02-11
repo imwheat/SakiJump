@@ -73,7 +73,7 @@ MonoBehaviour:
     AudioName: CRY
     Clips: 04000000
     AudioGroupIndex: 2
-    Volume: 0.1
+    Volume: 0.07
     Pitch: 1
     RandomMinPitch: 1
     RandomMaxPitch: 1
@@ -87,7 +87,7 @@ MonoBehaviour:
     AudioName: HTRWT
     Clips: 05000000
     AudioGroupIndex: 2
-    Volume: 0.1
+    Volume: 0.07
     Pitch: 1
     RandomMinPitch: 1
     RandomMaxPitch: 1
@@ -101,7 +101,7 @@ MonoBehaviour:
     AudioName: KillKISS
     Clips: 06000000
     AudioGroupIndex: 2
-    Volume: 0.1
+    Volume: 0.07
     Pitch: 1
     RandomMinPitch: 1
     RandomMaxPitch: 1
@@ -115,7 +115,7 @@ MonoBehaviour:
     AudioName: Mujica
     Clips: 07000000
     AudioGroupIndex: 2
-    Volume: 0.1
+    Volume: 0.07
     Pitch: 1
     RandomMinPitch: 1
     RandomMaxPitch: 1
@@ -129,7 +129,7 @@ MonoBehaviour:
     AudioName: MXJ
     Clips: 08000000
     AudioGroupIndex: 2
-    Volume: 0.1
+    Volume: 0.07
     Pitch: 1
     RandomMinPitch: 1
     RandomMaxPitch: 1

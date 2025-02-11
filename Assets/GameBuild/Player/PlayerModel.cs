@@ -71,6 +71,11 @@ namespace GameBuild.Player
         /// </summary>
         [LabelText("自身当前速度"), TabGroup("移动")]
         public Vector2 SelfVelocity = Vector2.zero;
+        /// <summary>
+        /// 朝向正反
+        /// </summary>
+        [LabelText("朝向正反"), TabGroup("移动")]
+        public bool rightDir = true;
         
         #endregion
 

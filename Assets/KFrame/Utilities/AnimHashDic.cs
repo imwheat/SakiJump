@@ -16,9 +16,45 @@ namespace KFrame.Utilities
 		/// <summary>
 		/// 名称: close
 		/// 引用动画机
-		/// Trigger: ConfirmPanel,GraphicSettingsPanel,AudioSettingsPanel,GameSettingsPanel,InputSettingsPanel,PauseMenuPanel,SettingsPanel
+		/// Trigger: AudioSettingsPanel,ConfirmPanel,GameSettingsPanel,InputSettingsPanel,GraphicSettingsPanel,PauseMenuPanel,SettingsPanel
 		/// </summary>
 		public static readonly int closeHash = Animator.StringToHash("close");
+		/// <summary>
+		/// 名称: onSplat
+		/// 引用动画机
+		/// Bool: Saki
+		/// </summary>
+		public static readonly int onSplatHash = Animator.StringToHash("onSplat");
+		/// <summary>
+		/// 名称: isJump
+		/// 引用动画机
+		/// Bool: Saki
+		/// </summary>
+		public static readonly int isJumpHash = Animator.StringToHash("isJump");
+		/// <summary>
+		/// 名称: hit
+		/// 引用动画机
+		/// Bool: Saki
+		/// </summary>
+		public static readonly int hitHash = Animator.StringToHash("hit");
+		/// <summary>
+		/// 名称: inputMag
+		/// 引用动画机
+		/// Float: Saki
+		/// </summary>
+		public static readonly int inputMagHash = Animator.StringToHash("inputMag");
+		/// <summary>
+		/// 名称: velocityY
+		/// 引用动画机
+		/// Float: Saki
+		/// </summary>
+		public static readonly int velocityYHash = Animator.StringToHash("velocityY");
+		/// <summary>
+		/// 名称: onGround
+		/// 引用动画机
+		/// Bool: Saki
+		/// </summary>
+		public static readonly int onGroundHash = Animator.StringToHash("onGround");
 
 		#endregion 代码生成结束标识
     }

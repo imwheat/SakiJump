@@ -46,7 +46,11 @@ namespace GameBuild.Player
         /// </summary>
         [TabGroup("基础配置")]
         public Animator Anim;
-
+        /// <summary>
+        /// Sprite
+        /// </summary>
+        [TabGroup("基础配置"), SerializeField]
+        private Transform spriteTrans;
         /// <summary>
         /// 跳跃音效id
         /// </summary>
@@ -133,6 +137,8 @@ namespace GameBuild.Player
             HandleTimer();
             //处理输入
             HandleInput();
+            //动画机更新
+            AnimUpdate();
         }
 
         private void FixedUpdate()
@@ -168,6 +174,30 @@ namespace GameBuild.Player
             {
                 Model.SplatFreezeTimer -= Time.deltaTime;
             }
+        }
+        /// <summary>
+        /// 动画参数更新
+        /// </summary>
+        private void AnimUpdate()
+        {
+            Anim.SetBool(AnimHashDic.onSplatHash, Model.SplatFreezeTimer > 0);
+            Anim.SetBool(AnimHashDic.onGroundHash, Model.OnGround);
+            if (Model.OnGround)
+            {
+                Anim.SetBool(AnimHashDic.hitHash, false);
+            }
+            Anim.SetBool(AnimHashDic.isJumpHash, InputModel.JumpInput);
+            Anim.SetFloat(AnimHashDic.inputMagHash, InputModel.MoveInput.magnitude);
+            Anim.SetFloat(AnimHashDic.velocityYHash, Rb.velocity.y);
+        }
+        /// <summary>
+        /// 更新朝向
+        /// </summary>
+        /// <param name="right"></param>
+        private void ChangeSpriteDir(bool right)
+        {
+            Model.rightDir = right;
+            spriteTrans.transform.localScale = new Vector3(right ? 1: -1, 1, 1);
         }
 
         #endregion
@@ -271,6 +301,9 @@ namespace GameBuild.Player
             
             //播放音效
             AudioDic.PlayAudio(bumpAudioIndex, transform.position);
+            
+            //更新动画状态
+            Anim.SetBool(AnimHashDic.hitHash, true);
         }
         /// <summary>
         /// 落地
@@ -335,6 +368,12 @@ namespace GameBuild.Player
             //更新速度
             Model.SelfVelocity = InputModel.MoveInput * Model.MoveSpeed;
             Rb.velocity = Model.RefVelocity + Model.SelfVelocity;
+            
+            //更新动画
+            if (Mathf.Abs(InputModel.MoveInput.x) > 0.1f)
+            {
+                ChangeSpriteDir(InputModel.MoveInput.x >= 0f);
+            }
         }
         /// <summary>
         /// 更新参考系速度
@@ -400,7 +439,8 @@ namespace GameBuild.Player
             float xSpeed = 0f;
             if (Mathf.Abs(InputModel.MoveInput.x) > 0.1f)
             {
-                xSpeed = InputModel.MoveInput.x > 0 ? Model.JumpMoveSpeed : -Model.JumpMoveSpeed;
+                xSpeed = InputModel.MoveInput.x >= 0f ? Model.JumpMoveSpeed : -Model.JumpMoveSpeed;
+                ChangeSpriteDir(InputModel.MoveInput.x >= 0f);
             }
             Model.JumpUpSpeed = xSpeed;
 

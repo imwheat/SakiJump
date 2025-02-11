@@ -612,7 +612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.6}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.8}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -944,14 +944,10 @@ MonoBehaviour:
     Component: {fileID: 8468949133386243159}
   - Key: 
     Component: {fileID: 7789956159329138020}
-  - Key: ui_GameSettings
-    Component: {fileID: 0}
   - Key: ui_AudioSettings
     Component: {fileID: 3031100785702663113}
   - Key: ui_GraphicSettings
     Component: {fileID: 6570377193190052469}
-  - Key: ui_InputSettings
-    Component: {fileID: 0}
   - Key: ui_ReturnButton
     Component: {fileID: 339644227230752520}
   defaultSelection: {fileID: 4970346791301260136}

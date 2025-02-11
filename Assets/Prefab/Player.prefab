@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 537821507236410872}
   - component: {fileID: 2189351476882519400}
   - component: {fileID: 4505110249725523002}
+  - component: {fileID: 3219395561982810319}
   m_Layer: 7
   m_Name: Sprite
   m_TagString: Player
@@ -130,6 +131,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &3219395561982810319
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979010630311023327}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f0b071f9480deb4eaecd910ee12c767, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2455227541631384789
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,6 +354,7 @@ MonoBehaviour:
     SplatFreezeTimer: 0
     RefVelocity: {x: 0, y: 0}
     SelfVelocity: {x: 0, y: 0}
+    rightDir: 1
     StartJump: 0
     JumpPressTime: 0
     OnGround: 0
@@ -339,7 +362,8 @@ MonoBehaviour:
     JumpUpSpeed: 0
     FallingTimer: 0
   Rb: {fileID: 6170207913780342400}
-  Anim: {fileID: 0}
+  Anim: {fileID: 3219395561982810319}
+  spriteTrans: {fileID: 537821507236410872}
   jumpAudioIndex: 200002
   landAudioIndex: 200003
   bumpAudioIndex: 200001
