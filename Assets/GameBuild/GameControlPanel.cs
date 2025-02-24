@@ -53,6 +53,7 @@ namespace GameBuild
             rightButton.OnRelease.AddListener(OnReleaseMove);
             jumpButton.OnRelease.AddListener(OnReleaseJump);
         }
+
         public override void ResetRect()
         {
             base.ResetRect();

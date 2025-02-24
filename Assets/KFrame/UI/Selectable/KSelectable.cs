@@ -6,8 +6,6 @@
 //*******************************************************
 using System;
 using System.Collections.Generic;
-using KFrame;
-using KFrame.Utilities;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -73,23 +71,28 @@ namespace KFrame.UI
             get => onSelect;
             set => onSelect = value;
         }
+        [SerializeField]
+        private bool syncGlobal = true;
 
         #region 生命周期
 
         protected override void Awake()
         {
             //读取全局配置的颜色配置
-            UIGlobalConfig config = UIGlobalConfig.Instance;
-            colors = new ColorBlock()
+            if (syncGlobal)
             {
-                colorMultiplier = colors.colorMultiplier,
-                disabledColor = config.DisabledColor,
-                fadeDuration = colors.fadeDuration,
-                highlightedColor = config.SelectedColor,
-                normalColor = config.NormalColor,
-                pressedColor = config.PressColor,
-                selectedColor = config.SelectedColor,
-            };
+                UIGlobalConfig config = UIGlobalConfig.Instance;
+                colors = new ColorBlock()
+                {
+                    colorMultiplier = colors.colorMultiplier,
+                    disabledColor = config.DisabledColor,
+                    fadeDuration = colors.fadeDuration,
+                    highlightedColor = config.SelectedColor,
+                    normalColor = config.NormalColor,
+                    pressedColor = config.PressColor,
+                    selectedColor = config.SelectedColor,
+                };
+            }
             
             base.Awake();
         }

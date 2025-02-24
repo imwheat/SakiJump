@@ -517,7 +517,7 @@ namespace KFrame.UI
 #if ENABLE_LEGACY_INPUT_MANAGER
             return CheckPositionOnUI(Input.mousePosition);
 #else
-            return CheckPositoinOnUI(UnityEngine.InputSystem.Mouse.current.position.ReadValue());
+            return CheckPositionOnUI(UnityEngine.InputSystem.Mouse.current.position.ReadValue());
 #endif
         }
 

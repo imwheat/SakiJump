@@ -102,6 +102,7 @@ namespace KFrame.Utilities
 
         private void Update()
         {
+#if ENABLE_LEGACY_INPUT_MANAGER
             //打包后使用键盘控制模式切换
             if (isUserShortCutKey)
             {
@@ -125,6 +126,7 @@ namespace KFrame.Utilities
                     isHide = !isHide;
                 }
             }
+#endif
 
 
             //帧时间
